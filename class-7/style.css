@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+}
+#menu-project{
+    list-style-type: none;
+    padding-left: 0px;
+    margin-top: 20px;
+    margin-left: 20px;
+   
+}
+
+#menu-project li {
+    /* display: inline; */
+    float: left;
+    border-right: 2px solid red;
+    border-bottom: 2px solid orange 
+}
+
+#menu-project li:last-child{
+    border-right: none;
+}
+
+#menu-project li a{
+    text-decoration: none;
+    color:red ;
+    background: yellowgreen ;
+    padding: 10px 20px;
+    display: block
+}
