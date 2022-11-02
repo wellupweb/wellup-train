@@ -4,17 +4,21 @@
 #menu-project{
     list-style-type: none;
     padding-left: 0px;
-    margin-top: 20px;
-    margin-left: 20px;
-   
+    width: 960px;
+    background: yellowgreen ;
+    height: 40px;
+    border-bottom: 2px solid orange ;
+    margin: 30px auto;
 }
 
 #menu-project li {
     /* display: inline; */
     float: left;
     border-right: 2px solid red;
-    border-bottom: 2px solid orange 
+
 }
+
+
 
 #menu-project li:last-child{
     border-right: none;
@@ -25,5 +29,10 @@
     color:red ;
     background: yellowgreen ;
     padding: 10px 20px;
-    display: block
+    display: block;
+    transition: all .5s ease-out;
+}
+
+#menu-project li a:hover{
+    background: yellow;
 }
