@@ -14,8 +14,8 @@
 #menu-project li {
     /* display: inline; */
     float: left;
-    border-right: 2px solid red;
-
+    border-bottom: 2px solid yellow ;
+    position: relative;
 }
 
 
@@ -36,3 +36,32 @@
 #menu-project li a:hover{
     background: yellow;
 }
+
+#menu-project li ul{
+    list-style-type: none ;
+    padding: 0;
+    position: absolute;
+    left: 9000000px
+}
+#menu-project li ul li{
+    float: none;
+
+}
+
+#menu-project li:hover ul{
+    left: 0;
+}
+
+
+/* .habil{
+    position: absolute;
+    right: 0;
+}
+
+
+.box{
+    width: 500px;
+    height: 400px;
+    background: blue;
+    position: relative
+} */
