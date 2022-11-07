@@ -1,0 +1,12 @@
+h2>color *
+p>color *
+h2>font-size *
+p>font-size *
+font_weight->both
+background *
+padding *
+align-center *
+hover *
+transition *
+style italic *
+
