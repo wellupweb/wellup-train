@@ -33,3 +33,25 @@ header p{
     
     font-weight:bold
 }
+
+
+/* Navbar */
+
+nav{
+
+}
+
+nav ul{
+    list-style-type: none;
+    padding:0
+}
+
+nav ul li{
+
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: blue;
+    background: green;
+}
