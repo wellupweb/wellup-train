@@ -38,20 +38,70 @@ header p{
 /* Navbar */
 
 nav{
-
+    background: yellow;
 }
 
 nav ul{
     list-style-type: none;
-    padding:0
+    padding:0;
+    display:flex;
+    justify-content: center;
+    gap:12px;
+    padding: 5px
 }
 
 nav ul li{
-
+    padding: 10px;
 }
 
 nav ul li a{
     text-decoration: none;
     color: blue;
     background: green;
+    padding: 16px 24px;
+}
+
+
+#content_wrapper{
+    display: flex;
+}
+#content_wrapper .content{
+    width: 600px;
+    background: aqua;
+    padding: 20px;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#content_wrapper aside{
+    width: 360px;
+    background: black;
+    color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content_wrapper aside ul{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 5px
+}
+#content_wrapper aside ul li{
+    background: blueviolet;
+    padding: 12px;
+}
+#content_wrapper aside ul li:hover{
+    background: brown;
+}
+
+footer{
+    background: black;
+    color: white;
+    padding: 18px;
+    text-align: center;
 }
