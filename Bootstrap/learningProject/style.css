@@ -5,3 +5,19 @@
 body{
     background: #eee;
 }
+
+.navbar_wrapper{
+    background: beige !important;
+}
+
+.navbar_wrapper .navbar-brand{
+    color: red;
+}
+
+.navbar_wrapper .nav-link{
+    color: yellowgreen;
+}
+
+.navbar_wrapper  .navbar-nav .nav-link.active , .navbar_wrapper .navbar-nav .show>.nav-link{
+    color: blue;
+}
