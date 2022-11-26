@@ -10,7 +10,16 @@
 <body>
     <h2 class="text-center">Learning JAVASCRIPT</h2>
 
-    <h1 id="someText" class="text-center">Hello</h1>
+    <!-- <h1 id="someText" class="text-center">Hello</h1>
+    <h1 id="manyText" class="text-center">Hello</h1>
+
+    <button onclick="changeColor('red')">
+        Click
+    </button>
+
+    <button onclick="makeGreeting()">
+        Again Clik
+    </button> -->
 
 
 
@@ -32,18 +41,41 @@
   
 
         // Function
-        function funny(num1,num2){
-            var sum = parseInt(num1) + parseInt(num2) ;
-            // console.log(sum);
-            return sum;
-        }
+        // function funny(num1,num2){
+        //     var sum = parseInt(num1) + parseInt(num2) ;
+        //     // console.log(sum);
+        //     return sum;
+        // }
 
-        var result1 = prompt("Enter You First Number?");
-        var result2 = prompt("Enter You Second Number?");
+        // function changeColor(color){
+        //     document.getElementById('someText').style.color = color;
+        // }
 
-        var sum1 = funny(result1,result2);
+        // function makeGreeting(){
+        //   var ourGreeting =  greeting("Arman")
 
-        document.getElementById("someText").innerHTML = sum1;
+        //   document.getElementById("someText").innerHTML = ourGreeting;
+        // }
+
+        // var helloWorld = greeting("helloWorld");
+
+        // console.log(helloWorld);
+
+        // function greeting(name){
+        //     var greet = "Hello " + name;
+
+        //     return greet
+        // }
+
+        // var result1 = prompt("Enter You First Number?");
+        // var result2 = prompt("Enter You Second Number?");
+
+        // var sum1 = funny(result1,result2);
+
+
+
+
+        // document.getElementById("someText").innerHTML = sum1;
 
         // var sum1 = funny(30,40);
         // var sum2 =  funny(50,60);
@@ -52,6 +84,122 @@
         // console.log(sum1);
         // console.log(sum2);
         // console.log(sum3);
+
+
+        // function result(num1,num2){
+        //     var cal = parseInt(num1) + parseInt(num2);
+
+        //     document.getElementById("someText").innerHTML = cal;
+        //     // return cal;
+        // }
+
+        // var res = result(4,5);
+
+        // document.getElementById("someText").innerHTML = res;
+
+        // var res2 = result(6,6);
+
+        // document.getElementById("manyText").innerHTML = res2;
+
+        
+        // While Loop
+
+        // var i = 3;
+        // while (i<=15) {
+        //     console.log(i)
+        //     i++;
+        // }
+
+        // For loop
+
+        // for (var i = 0; i <= 10 ; i++) {
+        //     console.log(i);
+            
+        // }
+
+        // Array
+        var cars = ["volvo","bugadi","ferari","Benz","Royals","Lamburigini","CNG","TEMPO"];
+        var mobiles = new Array("iphone","samsung","vivo","mi","nokia");
+
+        // console.log(cars.length);
+        // console.log(mobiles.length)
+
+        // console.log(cars[3]);
+        // console.log(mobiles[4]);
+
+        var i = 0;
+        
+        // while( i < cars.length){
+        //     console.log(cars[i])
+        //     i++;
+        // }
+
+
+        // for (let i = 0; i < cars.length; i++) {
+        //     console.log(cars[i]); 
+        // }
+
+        // var president = "obaidul";
+
+        // if(president == "Hasina"){
+        //     console.log("Yes she is the president")
+        // }
+        // else if(president == "Zia"){
+        //     console.log("Yes she is shabek president")
+        // }
+        // else{
+        //     console.log("Sorry You Are Wrong");
+        // }
+
+
+        // switch (president) {
+        //     case "Hasina":
+        //         console.log("She is president")
+        //         break;
+        //     case "obaidul":
+        //         console.log("balo hoye jao masud")
+        //         break;
+        //     case "shamim":
+        //         console.log("Kela hobe")
+        //         break;
+        //     case "brazil":
+        //         console.log("7up")
+        //         break;
+        //     case "argentina":
+        //         console.log("2 ta")
+        //         break;
+        //     default:
+        //         console.log("Sorry nothing match!!")
+        //         break;
+        // }
+
+
+        var country = ["Brazil","Germany","Argentina","Saudi","Portugal"]
+
+        // var chooseCountry = "Germany";
+
+        var i = 0;
+        while(i < country.length){
+            if(country[i] == "Brazil"){
+                console.log("5 ta world cup");
+            }else if(country[i] == "Germany"){
+                console.log("1 world cup");
+            }else if (country[i] == "Argentina"){
+                console.log("2 world cup");
+            }
+            
+            switch (country[i]) {
+                case "Brazil":
+                    console.log("5 ta world cup");
+                    break;
+                case "Germany":
+                    console.log("1 ta world cup");
+                    break;
+                default:
+                    break;
+            }
+            i++;
+        }
 
 
 
