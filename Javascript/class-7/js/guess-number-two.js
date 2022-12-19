@@ -54,3 +54,8 @@ function displayHistory(){
 }
 
 
+// document.body.children[0].children[3].children[0].style.background = "blue"
+
+// document.body.children[0].children[1].children[1].value = "100"
+document.getElementsByTagName('button')[0].style.background = "blue"
+document.getElementsByTagName('button')[0].style.color = "white"
