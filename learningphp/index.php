@@ -45,13 +45,14 @@
     <?php 
         class Hello
         {
+            public $football = "Messi";
             public function hey(){
                 return "Done";
             }
         }
         
         $hello = new Hello();
-        var_dump($hello->hey())
+        var_dump($hello)
     ?>
     
     <h4>Boolean</h4> 
@@ -59,6 +60,91 @@
         var_dump(true);
         var_dump(false);
     ?>
+
+
+    <h4>While Loop</h4>
+
+    <?php
+        $i = 10;
+        while ($i <= 10) {
+            echo "Its Counting ". $i . "<br>";
+            $i++;
+        }
+
+     
+    ?>
+
+    <h4>Do While Loop</h4>
+    
+    <?php
+    $a = 10;
+        do {
+            echo "Its Counting ". $a . "<br>";
+            $a++;
+        } while ($a <= 10);
+    ?>
+
+    <h4>For Loop</h4>
+
+    <?php 
+        
+        for ($j=0; $j <= 10 ; $j++) { 
+            echo "Its Counting ". $j . "<br>";
+        }
+    ?>
+
+    <h4>Foreach Loop</h4>
+
+    <?php 
+        $countries = array("c1" => "Germany","c2" => "Uganada");
+       
+        foreach ($countries as $country) {
+            echo "The country is ". $country . "<br>";
+        }
+    ?>
+
+    <h4>Function</h4>
+    <?php
+        function HelloWorld($text){
+            return "The message is ". $text;
+        }
+
+       echo HelloWorld("Messi");
+    ?>
+
+    <h4> Variable Scope </h4>
+    <?php
+    $x = 10;
+    $GLOBALS['z'] = 15;
+    function sum1(){
+        
+        $a = 3;
+        $b = 4;
+        echo $GLOBALS['z'] + $GLOBALS['x'] . "<br>";
+    }
+
+    function sum2(){
+        $i = 5;
+        $j = 6;
+        echo $i;
+    }
+
+    sum1();
+    sum2();
+    ?>
+
+    <h4>Super Global Variable</h4>
+<!-- 
+    $_GLOBALS
+    $_SERVER
+    $_REQUEST
+    $_POST
+    $_GET -->
+
+
+
+
+
 
 
 </body>
