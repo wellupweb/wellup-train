@@ -17,7 +17,7 @@
 
 <h4> Request Method </h4>
 
-<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET" >
+<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" >
     <input type="text" name="username">
     <input type="submit">
 </form>
