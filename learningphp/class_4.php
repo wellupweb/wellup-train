@@ -35,9 +35,7 @@
    
     <div class="container">
         <ul class="list-group mb-3">
-            <li class="list-group-item"><?php  echo "Full Name: $fullname"; ?>
-
-        </li>
+            <li class="list-group-item"><?php  echo "Full Name: $fullname"; ?></li>
             <li class="list-group-item"><?php echo "Age: $age"; ?></li>
             <li class="list-group-item"><?php echo "Email: $email"; ?></li>
             <li class="list-group-item"><?php echo "Phone Number: $phone_number"; ?></li>
