@@ -1,22 +1,28 @@
-<?php     
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
-        
-        if(empty($firstname) || empty($lastname) ){
-            echo "Field Required";
-        }else{
-            $link = new mysqli("localhost","root","","ebaly");
-            $insert_row = $link->query("insert into info(firstname,lastname) values('$firstname','$lastname')");
+<?php
+$link = new mysqli("localhost", "root", "", "ebaly");
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
 
-            if($insert_row){
-                echo "Inserted successfully";
-            }
+    if (empty($firstname) || empty($lastname)) {
+        echo "Field Required";
+    } else {
+        $insert_row = $link->query("insert into info(firstname,lastname) values('$firstname','$lastname')");
 
-            
+        if ($insert_row) {
+            echo "Inserted successfully";
         }
-
     }
+}
+
+$table_data = $link->query("select * from info order by firstname asc");
+if($table_data->num_rows > 0){
+    $results = $table_data->fetch_all();
+}
+
+
+
+
 
 ?>
 
@@ -46,8 +52,31 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $i = 0;  
+                foreach ($results as $result) {
+                    $i++;  ?>
+                <tr>
+                    <th scope="row"><?php echo $i; ?></th>
+                    <td><?php echo $result[1]; ?></td>
+                    <td><?php echo $result[2]; ?></td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        
+        </table>
     </div>
-   
+
 </body>
 
 </html>
