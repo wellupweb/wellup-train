@@ -16,9 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 
 $table_data = $link->query("select * from info order by firstname asc");
-if($table_data->num_rows > 0){
-    $results = $table_data->fetch_all();
-}
+// if($table_data->num_rows > 0){
+//     $results =  $table_data;
+// }
 
 
 
@@ -34,7 +34,8 @@ if($table_data->num_rows > 0){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OOP In PHP</title>
-    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -59,17 +60,21 @@ if($table_data->num_rows > 0){
                     <th scope="col">#</th>
                     <th scope="col">First</th>
                     <th scope="col">Last</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 $i = 0;  
-                foreach ($results as $result) {
+                while ($result = $table_data->fetch_assoc()) {
                     $i++;  ?>
                 <tr>
                     <th scope="row"><?php echo $i; ?></th>
-                    <td><?php echo $result[1]; ?></td>
-                    <td><?php echo $result[2]; ?></td>
+                    <td><?php echo $result['firstname']; ?></td>
+                    <td><?php echo $result['lastname']; ?></td>
+                    <td>
+                        <a href="edit.php?info_id=<?php echo $result['id']; ?>" class="btn btn-success"><i class="bi bi-pencil"></i></a>
+                    </td>
                 </tr>
                 <?php } ?>
             </tbody>
