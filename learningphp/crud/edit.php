@@ -16,13 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         echo "Field Required";
     } else {
 
-        $insert_row = $link->query("update info 
+        $update_row = $link->query("update info 
         set 
         firstname = '$firstname' ,
         lastname = '$lastname'
         where id = $id
         ");
-        if ($insert_row) {
+        if ($update_row) {
             header('Location: index.php');
         }
     }

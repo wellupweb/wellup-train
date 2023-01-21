@@ -1,5 +1,15 @@
 <?php
 $link = new mysqli("localhost", "root", "", "ebaly");
+
+if(isset($_GET['delete'])){
+    $del_id = $_GET['delete'];
+    $delete_row = $link->query("delete from info where id = $del_id");
+    if($delete_row){
+        echo "Deleted Successfully";
+    }
+}
+
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
@@ -74,6 +84,8 @@ $table_data = $link->query("select * from info order by firstname asc");
                     <td><?php echo $result['lastname']; ?></td>
                     <td>
                         <a href="edit.php?info_id=<?php echo $result['id']; ?>" class="btn btn-success"><i class="bi bi-pencil"></i></a>
+
+                        <a href="<?php echo $_SERVER["PHP_SELF"]; ?>?delete=<?php echo $result['id']; ?>" onclick="return confirm('Are you sure to delete')" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                     </td>
                 </tr>
                 <?php } ?>
