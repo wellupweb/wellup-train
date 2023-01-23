@@ -1,15 +1,9 @@
 <?php
-// $link = new mysqli("localhost", "root", "", "ebaly");
-// if( $link->connect_error){
-//     echo "hello". $link->connect_error;
-// }
-// die();
-
 include "./config.php";
 include "./Database.php";
 
 $db = new Database();
-die();
+$table_data = $db->select("select * from info order by firstname asc");
 
 if(isset($_GET['delete'])){
     $del_id = $_GET['delete'];
@@ -18,8 +12,6 @@ if(isset($_GET['delete'])){
         echo "Deleted Successfully";
     }
 }
-
-
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
@@ -27,32 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (empty($firstname) || empty($lastname)) {
         echo "Field Required";
     } else {
-        $insert_row = $link->query("insert into info(firstname,lastname) values('$firstname','$lastname')");
+        $insert_row = $db->link->query("insert into info(firstname,lastname) values('$firstname','$lastname')");
 
         if ($insert_row) {
             echo "Inserted successfully";
         }
     }
 }
-
-$table_data = $link->query("select * from info order by firstname asc");
-
-
-// echo "<pre>";
-// var_dump($table_data->fetch_all());
-// echo "<p>break</p>";
-// var_dump($table_data->fetch_array());
-// echo "<p>break</p>";
-// var_dump($table_data->fetch_assoc());
-// echo "<p>break</p>";
-// var_dump($table_data->fetch_assoc());
-// echo "</pre>";
-// die();
-
-
-// if($table_data->num_rows > 0){
-//     $results =  $table_data;
-// }
 
 
 
