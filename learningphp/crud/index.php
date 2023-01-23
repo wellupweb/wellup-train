@@ -1,5 +1,15 @@
 <?php
-$link = new mysqli("localhost", "root", "", "ebaly");
+// $link = new mysqli("localhost", "root", "", "ebaly");
+// if( $link->connect_error){
+//     echo "hello". $link->connect_error;
+// }
+// die();
+
+include "./config.php";
+include "./Database.php";
+
+$db = new Database();
+die();
 
 if(isset($_GET['delete'])){
     $del_id = $_GET['delete'];
@@ -26,6 +36,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 
 $table_data = $link->query("select * from info order by firstname asc");
+
+
+// echo "<pre>";
+// var_dump($table_data->fetch_all());
+// echo "<p>break</p>";
+// var_dump($table_data->fetch_array());
+// echo "<p>break</p>";
+// var_dump($table_data->fetch_assoc());
+// echo "<p>break</p>";
+// var_dump($table_data->fetch_assoc());
+// echo "</pre>";
+// die();
+
+
 // if($table_data->num_rows > 0){
 //     $results =  $table_data;
 // }
@@ -76,6 +100,8 @@ $table_data = $link->query("select * from info order by firstname asc");
             <tbody>
                 <?php
                 $i = 0;  
+                // var_dump($table_data->fetch_assoc());
+                // die();
                 while ($result = $table_data->fetch_assoc()) {
                     $i++;  ?>
                 <tr>

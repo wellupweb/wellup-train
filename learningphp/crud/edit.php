@@ -1,9 +1,13 @@
 <?php
 $link = new mysqli("localhost", "root", "", "ebaly");
+$firstname = $lastname = $id = "";
 if(isset($_GET['info_id'])){
     $info_id = $_GET['info_id'];
     $table_data = $link->query("select * from info where id = $info_id");
     $result = $table_data->fetch_assoc();
+    $firstname = $result['firstname'];
+    $lastname = $result['lastname'];
+    $info_id = $result['id'];
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -53,14 +57,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         <h2 class="bg-warning text-white p-3 text-center">INFO FORM</h2>
         <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST">
-            <input type="hidden" name="info_id" value="<?php echo $result['id']; ?>">
+            <input type="hidden" name="info_id" value="<?php echo $info_id; ?>">
             <div class="mb-3">
                 <label for="numberOne" class="form-label">First Name</label>
-                <input type="text" class="form-control" name="firstname" value="<?php echo $result['firstname']; ?>">
+                <input type="text" class="form-control" name="firstname" value="<?php echo $firstname; ?>">
             </div>
             <div class="mb-3">
                 <label for="numberTwo" class="form-label">Last Name</label>
-                <input type="text" class="form-control" name="lastname" value="<?php echo $result['lastname']; ?>">
+                <input type="text" class="form-control" name="lastname" value="<?php echo $lastname; ?>">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
