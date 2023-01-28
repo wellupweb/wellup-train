@@ -32,6 +32,33 @@
             }
         }
 
+        public function insert($sql){
+            $result = $this->link->query($sql);
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        public function update($sql){
+            $result = $this->link->query($sql);
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        public function delete($sql){
+            $result = $this->link->query($sql);
+            if($result){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
     }
 
 

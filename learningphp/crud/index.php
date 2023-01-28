@@ -1,13 +1,12 @@
 <?php
 include "./config.php";
 include "./Database.php";
-
 $db = new Database();
 $table_data = $db->select("select * from info order by firstname asc");
 
 if(isset($_GET['delete'])){
     $del_id = $_GET['delete'];
-    $delete_row = $link->query("delete from info where id = $del_id");
+    $delete_row = $db->delete("delete from info where id = $del_id");
     if($delete_row){
         echo "Deleted Successfully";
     }
@@ -19,7 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (empty($firstname) || empty($lastname)) {
         echo "Field Required";
     } else {
-        $insert_row = $db->link->query("insert into info(firstname,lastname) values('$firstname','$lastname')");
+        // $insert_row = $db->link->query("insert into info(firstname,lastname) values('$firstname','$lastname')");
+        $insert_row = $db->insert("insert into info(firstname,lastname) values('$firstname','$lastname')");
 
         if ($insert_row) {
             echo "Inserted successfully";

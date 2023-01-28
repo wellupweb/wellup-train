@@ -1,9 +1,11 @@
 <?php
-$link = new mysqli("localhost", "root", "", "ebaly");
+include "./config.php";
+include "./Database.php";
+$db = new Database();
 $firstname = $lastname = $id = "";
 if(isset($_GET['info_id'])){
     $info_id = $_GET['info_id'];
-    $table_data = $link->query("select * from info where id = $info_id");
+    $table_data = $db->select("select * from info where id = $info_id");
     $result = $table_data->fetch_assoc();
     $firstname = $result['firstname'];
     $lastname = $result['lastname'];
@@ -20,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         echo "Field Required";
     } else {
 
-        $update_row = $link->query("update info 
+        $update_row = $db->update("update info 
         set 
         firstname = '$firstname' ,
         lastname = '$lastname'
