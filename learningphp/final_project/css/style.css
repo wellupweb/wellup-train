@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.section-padding{
+    padding: 110px 0;
+}
+
+a{
+    text-decoration: none;
+    
+}
+
+.divider{
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.btn-own{
+    padding: 16px 15px;
+    border-radius: 50px;
+    background-color: var(--bs-info);
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all .4s ease-in-out;
+}
+.btn-own:hover{
+    background-color: aliceblue;
+    color: var(--bs-info);
+}
+/* .btn-own::after{
+    content: "";
+    position: absolute;
+    background-color: aliceblue;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 50px;
+    z-index: -1;
+}
+.btn-own:hover::after{
+    width: 100%;
+    color: var(--bs-info);
+} */
+/* navbar */
+
+.navbar{
+    transition: all .4s ease-in-out;
+    opacity: .9;
+}
+.navbar .navbar-nav .nav-link{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.navbar .navbar-nav .nav-link.active{
+    color: var(--bs-info);
+}
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link{
+        padding: 0px 16px;
+    }
+}
+
+/* services */
+
+.card .icon{
+    width: 80px;
+    height: 80px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+} 
+
+.card .icon i{
+    color: var(--bs-info);
+    font-size: 34px;
+}
+
+/* skill */
+
+.range .progress{
+    height: 10px;
+}
+
+.footer{
+    background-color: var(--bs-purple);
+    color: #fff;
+}
