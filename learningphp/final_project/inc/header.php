@@ -1,8 +1,10 @@
 <?php 
     include "./config/config.php";
     include "./lib/Database.php";
-
     $db = new Database();
+
+
+    
     $site_info = $db->select("select * from site_info");
     if($site_info){
         $site_info_result = $site_info->fetch_assoc();
