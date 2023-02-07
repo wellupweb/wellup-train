@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include "../config/config.php";
     include "../lib/Database.php";
     class Authentication{
@@ -22,8 +23,9 @@
 
             if($checkLogin->num_rows > 0){
                 $loggedUser = $checkLogin->fetch_assoc();
-                session_start();
+               
                 $_SESSION['login'] = true;
+                $_SESSION['id'] = $loggedUser['id'];
                 $_SESSION['name'] = $loggedUser['name'];
                 $_SESSION['email'] = $loggedUser['email'];
                 header("Location: dashboard.php");

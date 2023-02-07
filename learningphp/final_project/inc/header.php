@@ -3,7 +3,6 @@
     include "./lib/Database.php";
     $db = new Database();
 
-
     
     $site_info = $db->select("select * from site_info");
     if($site_info){
